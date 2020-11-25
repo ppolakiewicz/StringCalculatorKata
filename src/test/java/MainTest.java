@@ -44,7 +44,9 @@ public class MainTest {
                 Arguments.of("1,2", 3),
                 Arguments.of("1,2,3,4", 10),
                 Arguments.of("1,2,3\n4", 10),
-                Arguments.of("1\n2\n3\n4", 10)
+                Arguments.of("1\n2\n3\n4", 10),
+                Arguments.of("//;\n 1;2;3\n4", 10),
+                Arguments.of("//}\n1}2", 3)
         );
     }
 }
