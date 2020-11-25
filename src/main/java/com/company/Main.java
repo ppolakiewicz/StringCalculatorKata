@@ -5,6 +5,7 @@ import java.util.Arrays;
 public class Main {
 
     private static final String DELIMITER_MARKER = "//";
+    private static final int MAX_ITEM_VALUE = 1000;
 
     public static void main(String[] args) {
 	// write your code here
@@ -36,7 +37,9 @@ public class Main {
     private static int add(DelimiterDTO delimiterDTO){
         return Arrays.stream(delimiterDTO.getInput().split(delimiterDTO.getDelimiter()))
                 .map(String::trim)
-                .mapToInt(Integer::parseInt).sum();
+                .mapToInt(Integer::parseInt)
+                .filter(i -> i < MAX_ITEM_VALUE)
+                .sum();
     }
 
 }
